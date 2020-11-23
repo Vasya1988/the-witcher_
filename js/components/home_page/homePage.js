@@ -16,5 +16,7 @@ export default function() {
             </div>
             <!-- // Home Page -->`
 
-    return markupForHomePage;
+    document.getElementById('app').innerHTML = markupForHomePage;
+
+    return markupForHomePage
 }

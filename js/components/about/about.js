@@ -2,7 +2,7 @@ export default function() {
     const markupAbout = `<div class="about">
     <div class="about__info">
         <p>
-            Все привет! <br>
+            Всем привет! <br>
             Спасибо, что зашли на мой сайт и добрались до этой вкладки. <br>
             Это мой тестовый сайт, я его сделал для портфолио, т.к. в будущем хочу стать фронтенд разработчкиом
         </p>
@@ -29,7 +29,5 @@ export default function() {
     </div>
 </div>`;
 
-
-
-
+document.getElementById('app').innerHTML = markupAbout;
 }

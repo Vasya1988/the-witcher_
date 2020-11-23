@@ -2,12 +2,15 @@ import homePage from './components/home_page/homePage.js';
 import trailer from './components/trailer/trailer.js';
 import news from './components/news/news.js';
 import about from './components/about/about.js';
+import wallpapers from './components/wallpapers/wallpapers.js';
 
 
 const DOMSelectors = {
-    screenShot: document.querySelector('.images-frame div')
-    // screenShot: document.querySelectorAll('.images-frame-pic')
+    screenShot: document.querySelector('.images-frame div'),
+    navLink: document.querySelectorAll('.nav_link')
 };
+
+// console.log(DOMSelectors.navLink)
 
 const screenShots = [
     {
@@ -139,8 +142,8 @@ const screenShots = [
 
 const routes = [
     {
-        path: '#',
-        component: homePage()
+        path: 'index.html',
+        component: homePage
     },
     {
         path: 'trailer',
@@ -153,16 +156,52 @@ const routes = [
     {
         path: 'about',
         component: about
+    },
+    {
+        path: 'wallpapers',
+        component: wallpapers
     }
     
 ];
 
 // Рендер страницы приложения
-function render(page) {
-    document.getElementById('app').insertAdjacentHTML('afterbegin', page)
-}
-// render(routes[2].component);
+function render() {
 
+    if (location.hash === '') {
+        document.getElementById('app').innerHTML = homePage();
+    }
+    
+    // Находим текущую вкладку
+    DOMSelectors.navLink.forEach((item) => {
+
+        // Добавляем событие клик потекущей вкладке
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Находим текущий адрес в адресной строке
+            const pathname = e.target.pathname.split('/')[1];
+
+            // Сравниваем имя роутера с именем в адресной строке
+            routes.forEach((routeName) => {
+                if (routeName.path === pathname) {
+                    console.log('woork');
+
+                    // Отображаем текущую страницу
+                    routeName.component();
+                }
+            })
+        })
+    })
+}
+
+// Отображение активной вкладки в нав баре
+function currentNavMenu() {
+
+}
+currentNavMenu();
+
+
+// Рендер скриншотов
 function viewScreenShots() {
     screenShots.forEach((pic, index) => {
 
@@ -171,4 +210,10 @@ function viewScreenShots() {
         DOMSelectors.screenShot.insertAdjacentHTML('afterbegin', markupScreenShot)
     })
 }
-viewScreenShots()
+viewScreenShots();
+
+
+// Запуск роутера, когда изменился hashchange
+window.addEventListener('hashchange', render);
+// Запуск при загрузке страницы
+window.addEventListener('load', render);

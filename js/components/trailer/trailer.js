@@ -12,5 +12,5 @@ export default function() {
     <!-- // Trailer -->`;
 
 
-    return markupTrailer;
+    document.getElementById('app').innerHTML = markupTrailer
 }
