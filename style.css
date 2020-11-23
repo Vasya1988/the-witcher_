@@ -53,7 +53,7 @@ header {
 }
 
 .nav_link:hover {
-    background-color: rgb(224, 16, 16);
+    background-color: #e01010;
     color: #ffffff;
     box-shadow: 0 0 16px 8px rgb(224, 16, 16, 0.7);
 }
@@ -123,7 +123,7 @@ header {
 
 
 
-/* -------------- Home Page Component -------------- */
+/* -------------- Trailer -------------- */
 .trailer {
     max-width: 100%;
     min-width: 576px;
@@ -151,9 +151,90 @@ header {
 
 
 
-/* -------------- // Home Page Component -------------- */
+/* -------------- // Trailer -------------- */
 
 
+
+
+
+
+
+/* -------------- News Frame -------------- */
+
+.news-frame {
+    max-width: 100%;
+    min-width: 576px;
+    height: 540px;
+}
+
+.news-frame__info {
+    display: flex;
+}
+
+.news-frame__title {
+    color: #c0c0c0;
+    text-transform: uppercase;
+}
+
+
+.news-frame__info-text {
+    padding: 0 40px;
+    font-size: 1.3em;
+    color:#c0c0c0;
+}
+
+.news-frame__info-text span {
+    float: right;
+    padding-top: 20px;
+}
+
+/* -------------- // News Frame -------------- */
+
+
+
+
+
+
+/* -------------- About -------------- */
+.about {
+    max-width: 100%;
+    min-width: 576px;
+    height: 540px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__info {
+    color:  #c0c0c0;
+    font-size: 1.4em;
+}
+
+.social_icon a {
+    color: #631616;
+    font-size: 3em;
+    padding: 0 20px;
+}
+
+
+/* -------------- // About -------------- */
+
+.wallpapers {
+    max-width: 100%;
+    min-width: 576px;
+    height: 540px;
+}
+
+.wallpapers-frame {
+    max-width: 100%;
+    min-width: 576px;
+    height: 540px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
 
 

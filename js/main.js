@@ -1,5 +1,7 @@
 import homePage from './components/home_page/homePage.js';
 import trailer from './components/trailer/trailer.js';
+import news from './components/news/news.js';
+import about from './components/about/about.js';
 
 
 const DOMSelectors = {
@@ -143,6 +145,14 @@ const routes = [
     {
         path: 'trailer',
         component: trailer
+    },
+    {
+        path: 'news',
+        component: news
+    },
+    {
+        path: 'about',
+        component: about
     }
     
 ];
@@ -151,7 +161,7 @@ const routes = [
 function render(page) {
     document.getElementById('app').insertAdjacentHTML('afterbegin', page)
 }
-// render(routes[0].component);
+// render(routes[2].component);
 
 function viewScreenShots() {
     screenShots.forEach((pic, index) => {
