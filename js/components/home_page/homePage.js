@@ -16,7 +16,7 @@ export default function() {
             </div>
             <!-- // Home Page -->`
 
-    document.getElementById('app').innerHTML = markupForHomePage;
+    document.getElementById('app').insertAdjacentHTML('afterbegin', markupForHomePage)
 
     return markupForHomePage
 }

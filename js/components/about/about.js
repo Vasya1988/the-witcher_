@@ -29,5 +29,5 @@ export default function() {
     </div>
 </div>`;
 
-document.getElementById('app').innerHTML = markupAbout;
+document.getElementById('app').insertAdjacentHTML('afterbegin', markupAbout);
 }

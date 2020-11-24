@@ -12,5 +12,5 @@ export default function() {
     <!-- // Trailer -->`;
 
 
-    document.getElementById('app').innerHTML = markupTrailer
+    document.getElementById('app').insertAdjacentHTML('afterbegin', markupTrailer)
 }

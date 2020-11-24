@@ -142,7 +142,7 @@ const screenShots = [
 
 const routes = [
     {
-        path: 'index.html',
+        path: '#',
         component: homePage
     },
     {
@@ -166,32 +166,21 @@ const routes = [
 
 // Рендер страницы приложения
 function render() {
+    const pathArray = location.hash.split('/')[1];
+    let delPage = document.getElementById('app');
 
-    if (location.hash === '') {
-        document.getElementById('app').innerHTML = homePage();
-    }
-    
-    // Находим текущую вкладку
-    DOMSelectors.navLink.forEach((item) => {
+    if (location.hash.split('/')[0] === '') {
+        delPage.innerHTML = '';
+        routes[0].component();
+    };
 
-        // Добавляем событие клик потекущей вкладке
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            // Находим текущий адрес в адресной строке
-            const pathname = e.target.pathname.split('/')[1];
-
-            // Сравниваем имя роутера с именем в адресной строке
-            routes.forEach((routeName) => {
-                if (routeName.path === pathname) {
-                    console.log('woork');
-
-                    // Отображаем текущую страницу
-                    routeName.component();
-                }
-            })
-        })
-    })
+    const pathRoute = routes.find((e) => {
+        if (e.path === pathArray) {
+            
+            delPage.innerHTML = '';
+            return e.component()
+        }
+    });
 }
 
 // Отображение активной вкладки в нав баре

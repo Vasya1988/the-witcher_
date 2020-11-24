@@ -31,5 +31,5 @@ export default function() {
 
     </div>`;
 
-    document.getElementById('app').innerHTML = markupNews;
+    document.getElementById('app').insertAdjacentHTML('afterbegin', markupNews)
 }

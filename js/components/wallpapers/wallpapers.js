@@ -8,7 +8,7 @@ export default function() {
     </div>
 </div>`;
 
-    document.getElementById('app').innerHTML = markupWallpapers;
+    document.getElementById('app').insertAdjacentHTML('afterbegin', markupWallpapers)
 }
 
 
