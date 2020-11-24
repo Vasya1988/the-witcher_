@@ -269,6 +269,7 @@ header {
     min-width: 576px;
     display: flex;
     align-items: center;
+    overflow: hidden;
     /* background-color: rgb(27, 212, 27); */
 }
 
@@ -278,7 +279,6 @@ header {
     position: relative;
     left: 0px;
     transition: linear .5s;
-    overflow: hidden;
 }
 
 .images-frame-pic {

@@ -4,14 +4,14 @@ import news from './components/news/news.js';
 import about from './components/about/about.js';
 import wallpapers from './components/wallpapers/wallpapers.js';
 
-
-
 const DOMSelectors = {
     screenShot: document.querySelector('.images-frame div'),
-    navLink: document.querySelectorAll('.nav_link')
+    navLink: document.querySelectorAll('.nav_link'),
+    buttonBack: document.querySelector('.btn-back'),
+    buttonforward: document.querySelector('.btn-forward'),
+    buttons: document.querySelectorAll('.btn'),
+    moveFrame: document.querySelector('.images-frame div')
 };
-
-// console.log(DOMSelectors.navLink)
 
 const screenShots = [
     {
@@ -165,8 +165,6 @@ const routes = [
     
 ];
 
-
-
 // Рендер страницы приложения
 function render() {
     const pathArray = location.hash.split('/')[1];
@@ -187,6 +185,48 @@ function render() {
     });
 }
 
+// Рендер скриншотов
+function viewScreenShots() {
+    screenShots.forEach((pic, index) => {
+
+        let markupScreenShot = `<img class="images-frame-pic" src="${pic.adress}" alt="">`
+
+        DOMSelectors.screenShot.insertAdjacentHTML('afterbegin', markupScreenShot)
+    })
+}
+viewScreenShots();
+let moveLeft = 0;
+// Листать скриншоты
+DOMSelectors.buttons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        
+        if (button.classList.value.split(' ')[1] === 'btn-back') {
+            // 160 (ширина картинки), умножаем на 25 (кол-во картинок)
+            // получаем 4000 из них вычитаем 4 картинки это будет 640 (160*4=640)
+            // Получаем конечную длину фрейма с картинками, после которого движение невозможно
+            const end = `-${(160 * 25) - (160 * 4)}`;
+            if (moveLeft > end ) {
+                DOMSelectors.moveFrame.style.left = `${moveLeft = moveLeft - 80}px`;
+            } else {
+                DOMSelectors.moveFrame.style.left = `${moveLeft = moveLeft - 20}px`;
+                setTimeout(() => {
+                    DOMSelectors.moveFrame.style.left = `${moveLeft = moveLeft + 20}px`;
+                }, 80)
+            }
+        } else if (button.classList.value.split(' ')[1] === 'btn-forward') {
+            if (moveLeft != 0) {
+                DOMSelectors.moveFrame.style.left = `${moveLeft = moveLeft + 80}px`;
+            } else {
+                DOMSelectors.moveFrame.style.left = `${moveLeft = moveLeft + 20}px`;
+                setTimeout(() => {
+                    DOMSelectors.moveFrame.style.left = `${moveLeft = moveLeft - 20}px`;
+                }, 80)
+            }
+        }
+    })
+})
+
 // Отображение активной вкладки в нав баре
 DOMSelectors.navLink.forEach((activeClass) => {
     activeClass.addEventListener('click', (e) => {
@@ -198,20 +238,6 @@ DOMSelectors.navLink.forEach((activeClass) => {
         activeClass.classList.add('nav_link_active');
     })
 });
-
-
-
-// Рендер скриншотов
-function viewScreenShots() {
-    screenShots.forEach((pic, index) => {
-
-        let markupScreenShot = `<img class="images-frame-pic" src="${pic.adress}" alt="">`
-
-        DOMSelectors.screenShot.insertAdjacentHTML('afterbegin', markupScreenShot)
-    })
-}
-viewScreenShots();
-
 
 // Запуск роутера, когда изменился hashchange
 window.addEventListener('hashchange', render);
