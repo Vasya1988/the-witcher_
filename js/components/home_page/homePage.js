@@ -1,3 +1,5 @@
+import {DOMSelectors} from '../../main.js';
+
 
 export default function() {
     const markupForHomePage = `<!-- Home Page -->
@@ -17,6 +19,9 @@ export default function() {
             <!-- // Home Page -->`
 
     document.getElementById('app').insertAdjacentHTML('afterbegin', markupForHomePage);
+
+    DOMSelectors.navLink.forEach((e) => e.classList.remove('nav_link_active'));
+    DOMSelectors.navLink[0].classList.add('nav_link_active');
 
     return markupForHomePage
 }

@@ -1,3 +1,6 @@
+import {DOMSelectors} from '../../main.js';
+
+
 export default function() {
     const markupAbout = `<div class="about">
     <div class="about__info">
@@ -28,6 +31,9 @@ export default function() {
 
     </div>
 </div>`;
+
+    DOMSelectors.navLink.forEach((e) => e.classList.remove('nav_link_active'));
+    DOMSelectors.navLink[5].classList.add('nav_link_active');
 
 document.getElementById('app').insertAdjacentHTML('afterbegin', markupAbout);
 }

@@ -1,3 +1,5 @@
+import {DOMSelectors} from '../../main.js';
+
 export default function() {
     const markupNews = `
     <div class="news-frame">
@@ -30,6 +32,9 @@ export default function() {
         </div>
 
     </div>`;
+
+    DOMSelectors.navLink.forEach((e) => e.classList.remove('nav_link_active'));
+    DOMSelectors.navLink[3].classList.add('nav_link_active');
 
     document.getElementById('app').insertAdjacentHTML('afterbegin', markupNews)
 }

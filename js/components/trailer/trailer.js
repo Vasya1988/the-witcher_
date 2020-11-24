@@ -1,3 +1,5 @@
+import {DOMSelectors} from '../../main.js';
+
 export default function() {
     const markupTrailer = `<!-- Trailer -->
     <div class="trailer">
@@ -11,6 +13,8 @@ export default function() {
     </div>
     <!-- // Trailer -->`;
 
+    DOMSelectors.navLink.forEach((e) => e.classList.remove('nav_link_active'));
+    DOMSelectors.navLink[1].classList.add('nav_link_active');
 
     document.getElementById('app').insertAdjacentHTML('afterbegin', markupTrailer)
 }

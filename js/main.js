@@ -3,8 +3,9 @@ import trailer from './components/trailer/trailer.js';
 import news from './components/news/news.js';
 import about from './components/about/about.js';
 import wallpapers from './components/wallpapers/wallpapers.js';
+import season1 from './components/season1/season1.js';
 
-const DOMSelectors = {
+export const DOMSelectors = {
     screenShot: document.querySelector('.images-frame div'),
     navLink: document.querySelectorAll('.nav_link'),
     buttonBack: document.querySelector('.btn-back'),
@@ -151,6 +152,10 @@ const routes = [
         component: trailer
     },
     {
+        path: 'season1',
+        component: season1
+    },
+    {
         path: 'news',
         component: news
     },
@@ -165,6 +170,8 @@ const routes = [
     
 ];
 
+let moveLeft = 0;
+
 // Рендер страницы приложения
 function render() {
     const pathArray = location.hash.split('/')[1];
@@ -173,7 +180,6 @@ function render() {
     if (location.hash.split('/')[0] === '') {
         delPage.innerHTML = '';
         routes[0].component();
-        
     };
 
     const pathRoute = routes.find((e) => {
@@ -186,16 +192,11 @@ function render() {
 }
 
 // Рендер скриншотов
-function viewScreenShots() {
-    screenShots.forEach((pic, index) => {
+screenShots.forEach((pic, index) => {
+    let markupScreenShot = `<img class="images-frame-pic" src="${pic.adress}"alt="">`
+    DOMSelectors.screenShot.insertAdjacentHTML('afterbegin', markupScreenShot)
+})
 
-        let markupScreenShot = `<img class="images-frame-pic" src="${pic.adress}" alt="">`
-
-        DOMSelectors.screenShot.insertAdjacentHTML('afterbegin', markupScreenShot)
-    })
-}
-viewScreenShots();
-let moveLeft = 0;
 // Листать скриншоты
 DOMSelectors.buttons.forEach((button) => {
     button.addEventListener('click', (event) => {
@@ -229,14 +230,18 @@ DOMSelectors.buttons.forEach((button) => {
 
 // Отображение активной вкладки в нав баре
 DOMSelectors.navLink.forEach((activeClass) => {
-    activeClass.addEventListener('click', (e) => {
 
-        // Удаляем все активные классы
-        Array.from(DOMSelectors.navLink).find((e)=> e.classList.remove('nav_link_active'))
 
-        // Добавляем текущей вкладке активный класс
-        activeClass.classList.add('nav_link_active');
-    })
+
+
+    // activeClass.addEventListener('click', (e) => {
+
+    //     // Удаляем все активные классы
+    //     Array.from(DOMSelectors.navLink).find((e)=> e.classList.remove('nav_link_active'))
+
+    //     // Добавляем текущей вкладке активный класс
+    //     activeClass.classList.add('nav_link_active');
+    // })
 });
 
 // Запуск роутера, когда изменился hashchange
