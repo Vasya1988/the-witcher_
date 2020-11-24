@@ -5,6 +5,7 @@ import about from './components/about/about.js';
 import wallpapers from './components/wallpapers/wallpapers.js';
 
 
+
 const DOMSelectors = {
     screenShot: document.querySelector('.images-frame div'),
     navLink: document.querySelectorAll('.nav_link')
@@ -164,6 +165,8 @@ const routes = [
     
 ];
 
+
+
 // Рендер страницы приложения
 function render() {
     const pathArray = location.hash.split('/')[1];
@@ -172,6 +175,7 @@ function render() {
     if (location.hash.split('/')[0] === '') {
         delPage.innerHTML = '';
         routes[0].component();
+        
     };
 
     const pathRoute = routes.find((e) => {
@@ -184,10 +188,17 @@ function render() {
 }
 
 // Отображение активной вкладки в нав баре
-function currentNavMenu() {
+DOMSelectors.navLink.forEach((activeClass) => {
+    activeClass.addEventListener('click', (e) => {
 
-}
-currentNavMenu();
+        // Удаляем все активные классы
+        Array.from(DOMSelectors.navLink).find((e)=> e.classList.remove('nav_link_active'))
+
+        // Добавляем текущей вкладке активный класс
+        activeClass.classList.add('nav_link_active');
+    })
+});
+
 
 
 // Рендер скриншотов
@@ -206,3 +217,4 @@ viewScreenShots();
 window.addEventListener('hashchange', render);
 // Запуск при загрузке страницы
 window.addEventListener('load', render);
+
