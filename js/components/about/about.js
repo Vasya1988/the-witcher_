@@ -2,8 +2,8 @@ import {DOMSelectors} from '../../main.js';
 
 
 export default function() {
-    const markupAbout = `<div class="about">
-    <div class="about__info">
+    const markupAbout = `<div class="about-page">
+    <div class="about-page__info">
         <p>
             Всем привет! <br>
             Спасибо, что зашли на мой сайт и добрались до этой вкладки. <br>
@@ -32,8 +32,28 @@ export default function() {
     </div>
 </div>`;
 
-    DOMSelectors.navLink.forEach((e) => e.classList.remove('nav_link_active'));
-    DOMSelectors.navLink[5].classList.add('nav_link_active');
+    function renderPage() {
+        return new Promise((resolve, reject) => {
+            DOMSelectors.navLink.forEach((e) => e.classList.remove('nav_link_active'));
+            DOMSelectors.navLink[5].classList.add('nav_link_active');
 
-document.getElementById('app').insertAdjacentHTML('afterbegin', markupAbout);
+            document.getElementById('app').insertAdjacentHTML('afterbegin', markupAbout);
+            resolve();
+        })
+    };
+
+    function animPage() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                document.querySelector('.about-page').style.opacity = 1;
+            }, 100);
+        })
+    }
+
+    async function runStart() {
+        await renderPage();
+        await animPage();
+    }
+    runStart();
+    
 }

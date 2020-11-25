@@ -10,10 +10,28 @@ export default function() {
     </div>
 </div>`;
 
-    DOMSelectors.navLink.forEach((e) => e.classList.remove('nav_link_active'));
-    DOMSelectors.navLink[4].classList.add('nav_link_active');
+    function renderPage() {
+        return new Promise((resolve, reject) => {
+            DOMSelectors.navLink.forEach((e) => e.classList.remove('nav_link_active'));
+            DOMSelectors.navLink[4].classList.add('nav_link_active');
 
-    document.getElementById('app').insertAdjacentHTML('afterbegin', markupWallpapers)
+            document.getElementById('app').insertAdjacentHTML('afterbegin', markupWallpapers);
+            resolve();
+        })
+    };
+
+    function animPage() {
+        return new Promise((resolve, reject) => {
+            document.querySelector('.wallpapers-page').style.opacity = 1;
+        })
+    };
+
+    async function runStart() {
+        await renderPage();
+        await animPage();
+    };
+
+    runStart();
 }
 
 

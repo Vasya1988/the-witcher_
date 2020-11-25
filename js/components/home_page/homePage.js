@@ -18,10 +18,32 @@ export default function() {
             </div>
             <!-- // Home Page -->`
 
-    document.getElementById('app').insertAdjacentHTML('afterbegin', markupForHomePage);
+    function renderPage() {
+        return new Promise((resolve, reject) => {
 
-    DOMSelectors.navLink.forEach((e) => e.classList.remove('nav_link_active'));
-    DOMSelectors.navLink[0].classList.add('nav_link_active');
+            document.getElementById('app').insertAdjacentHTML('afterbegin', markupForHomePage);
+
+            DOMSelectors.navLink.forEach((e) => e.classList.remove('nav_link_active'));
+            DOMSelectors.navLink[0].classList.add('nav_link_active');
+            resolve();
+        })
+    }
+    
+    function animPage() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                document.querySelector('.home-page').style.opacity = 1;
+            }, 100);
+        })
+    }
+
+    async function runStart() {
+        await renderPage();
+        await animPage();
+    }
+    runStart()
+
+    
 
     return markupForHomePage
 }
