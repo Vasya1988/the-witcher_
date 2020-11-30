@@ -121,7 +121,11 @@ header {
 
 }
 
-
+@media screen and (max-width: 576px) {
+    .container {
+        width: 576px;
+    }
+}
 
 /* -------------- Home Page Component -------------- */
 .home-page {
