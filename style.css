@@ -349,115 +349,31 @@ footer li a img{
 
 /* Мобильная версия */
 
-@media screen and (max-width: 576px) { 
+@media screen and (max-width: 576px) {
     .container {
-        max-width: 576px;
-        min-width: 320px;
+        min-width: 576px;
     }
 
     header {
-        width: 576px;
-        min-width: 320px;
-        height: auto;
-        justify-content: space-around;
+        min-width: 576px;
     }
 
-    .header__nav-menu-top {
-        max-width: 576px;
-        min-width: 320px;
-        height: 60px;
-        background-color: #e01010;
-        border-radius: 8px;
-        z-index: 1;
-    }
-
-    .header__nav-menu-top p {
-        display: block;
-        color: #ffffff;
-        font-family: sans-serif;
-        text-align: center;
-        font-size: 1.8em;
-        position: relative;
-        bottom: 14px;
+    .logo img {
+        height: 120px;
     }
 
     .header__nav-menu-top ul {
-        min-width: 50%;
-        display: none;
-        flex-wrap: wrap;
-        position: fixed;
-        top: 0;
-        right: 0;
-        background: #0a0a0a;
+        display: block;
     }
 
-    .header__nav-menu-top:hover ul {
-        display: flex;
+    .app {
+        min-width: 576px;
     }
 
-    .header__nav-menu-top ul li {
-        min-width: 100%;
-        padding: 20px 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .home-page, .trailer-page, .news-page {
-        width: 576px;
-        min-width: 320px;
+    .home-page {
+        min-width: 576px;
         background-position: center;
     }
-
-    .trailer-page {
-
-    }
-
-    .trailer-page_movie iframe {
-        width: 540px;
-        min-width: 320px;
-    }
-
-    .home-page p {
-        font-size: 1em;
-    }
-
-    .news-page {
-        padding: 0 20px;
-    }
-
-    .news-page__title {
-        width: 540px;
-        min-width: 320px;
-    }
-
-    .news-page__info-text {
-        padding: 0;
-    }
-
-    .news-page__info-text p{
-        width: 540px;
-        min-width: 320px;
-    }
-
-    /* Мобильная Галерея */
-    .gallery {
-        width: 576px;
-        justify-content: center;
-    }
-
-    .images-frame {
-        max-width: 100%;
-        min-width: 320px;
-    }
-
-    footer {
-        width: 576px;
-    }
-
-    footer nav {
-        justify-content: center;
-    }
-
 
 }
 
