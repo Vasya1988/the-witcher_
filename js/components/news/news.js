@@ -10,9 +10,7 @@ export default function() {
         <div class="news-page__info">
             <div class="news-page__info-picture">
                 <img src="./image/News_picture/news.jpg" alt="">
-            </div>
-
-            <div class="news-page__info-text">
+                <div class="news-page__info-text">
                 <p>
                     Потоковый сервис Netflix остановил съемки второго сезона сериала "Ведьмак". По сведениям издания Variety, произошло это после того, как у четырех членов съемочной группы был диагностирован коронавирус нового типа. Утверждается, что они находятся в изоляции, а все остальные должны пройти соответствующие тесты. Кто именно заболел, не уточняется.
 
@@ -29,6 +27,9 @@ export default function() {
                     </span>
                 </p>
             </div>
+            </div>
+
+            
         </div>
 
     </div>`;
