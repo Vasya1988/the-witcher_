@@ -71,13 +71,18 @@ header {
 }
 
 @media screen and (max-width: 980px) {
+    .container {
+        max-width: 980px;
+    }
+
     header {
+        width: 980px;
         height: auto;
         justify-content: space-around;
     }
 
     .header__nav-menu-top {
-        width: 200px;
+        min-width: 200px;
         height: 60px;
         background-color: #e01010;
         border-radius: 8px;
@@ -95,7 +100,7 @@ header {
     }
 
     .header__nav-menu-top ul {
-        width: 50%;
+        min-width: 50%;
         display: none;
         flex-wrap: wrap;
         position: fixed;
@@ -109,7 +114,7 @@ header {
     }
 
     .header__nav-menu-top ul li {
-        width: 100%;
+        min-width: 100%;
         padding: 20px 0;
     }
 
