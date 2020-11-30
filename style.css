@@ -70,66 +70,11 @@ header {
     font-family: "PT Sans", sans-serif;
 }
 
-@media screen and (max-width: 980px) {
-    .container {
-        max-width: 980px;
-    }
 
-    header {
-        width: 980px;
-        height: auto;
-        justify-content: space-around;
-    }
-
-    .header__nav-menu-top {
-        min-width: 200px;
-        height: 60px;
-        background-color: #e01010;
-        border-radius: 8px;
-        z-index: 1;
-    }
-
-    .header__nav-menu-top p {
-        display: block;
-        color: #ffffff;
-        font-family: sans-serif;
-        text-align: center;
-        font-size: 1.8em;
-        position: relative;
-        bottom: 14px;
-    }
-
-    .header__nav-menu-top ul {
-        min-width: 50%;
-        display: none;
-        flex-wrap: wrap;
-        position: fixed;
-        top: 0;
-        right: 0;
-        background: #0a0a0a;
-    }
-
-    .header__nav-menu-top:hover ul {
-        display: flex;
-    }
-
-    .header__nav-menu-top ul li {
-        min-width: 100%;
-        padding: 20px 0;
-    }
-
-
-}
-
-@media screen and (max-width: 576px) {
-    .container {
-        width: 576px;
-    }
-}
 
 /* -------------- Home Page Component -------------- */
 .home-page {
-    max-width: 100%;
+    max-width: 1200px;
     min-width: 980px;
     height: 540px;
     background-image: url('./image/the_witcher_1200_darken.jpg');
@@ -319,8 +264,10 @@ header {
 }
 
 .btn {
-    width: 100px;
+    /* width: 100px; */
     height: inherit;
+    display: flex;
+    justify-content: center;
     /* background-color: rgb(196, 90, 90); */
 }
 
@@ -329,12 +276,11 @@ header {
 } */
 
 .btn img {
-    width: 100px;
-    height: 130px;
+    height: 100%;
 }
 
 .images-frame {
-    width: 970px;
+    width: 90%;
     min-width: 576px;
     display: flex;
     align-items: center;
@@ -368,6 +314,7 @@ header {
 }
 
 footer nav {
+
     display: flex;
     justify-content: space-around;
     align-items: baseline;
@@ -384,6 +331,91 @@ footer li a img{
 
 
 /* -------------- // Галерея -------------- */
+
+
+
+
+
+
+
+/* Мобильная версия */
+@media screen and (max-width: 576px) { 
+    .container {
+        max-width: 576px;
+        min-width: 320px;
+    }
+
+    header {
+        width: 576px;
+        min-width: 320px;
+        height: auto;
+        justify-content: space-around;
+    }
+
+    .header__nav-menu-top {
+        max-width: 576px;
+        min-width: 320px;
+        height: 60px;
+        background-color: #e01010;
+        border-radius: 8px;
+        z-index: 1;
+    }
+
+    .header__nav-menu-top p {
+        display: block;
+        color: #ffffff;
+        font-family: sans-serif;
+        text-align: center;
+        font-size: 1.8em;
+        position: relative;
+        bottom: 14px;
+    }
+
+    .header__nav-menu-top ul {
+        min-width: 50%;
+        display: none;
+        flex-wrap: wrap;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: #0a0a0a;
+    }
+
+    .header__nav-menu-top:hover ul {
+        display: flex;
+    }
+
+    .header__nav-menu-top ul li {
+        min-width: 100%;
+        padding: 20px 0;
+    }
+
+    .home-page {
+        max-width: 576px;
+        min-width: 320px;
+        background-position: center;
+    }
+
+    .home-page p {
+        font-size: 1em;
+    }
+
+    /* Мобильная Галерея */
+    .gallery {
+        width: 576px;
+    }
+
+    .images-frame {
+        max-width: 100%;
+        min-width: 320px;
+    }
+
+    footer {
+        width: 576px;
+    }
+
+
+}
 
 
 
