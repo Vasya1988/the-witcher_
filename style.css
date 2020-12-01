@@ -264,6 +264,7 @@ header {
 
 /* -------------- Галерея -------------- */
 .gallery {
+    width: 100%;
     margin-top: 15px;
     margin: 15px 0;
     height: 130px;
@@ -290,7 +291,6 @@ header {
 
 .images-frame {
     width: 90%;
-    min-width: 576px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -322,6 +322,18 @@ header {
    /* box-shadow: 0 6px 12px 0 #ffffff ; */
 }
 
+
+/* -------------- // Галерея -------------- */
+
+
+
+
+
+
+footer {
+    width: 100%;
+}
+
 footer nav {
 
     display: flex;
@@ -339,7 +351,7 @@ footer li a img{
 
 
 
-/* -------------- // Галерея -------------- */
+
 
 
 
@@ -351,10 +363,7 @@ footer li a img{
 
 @media screen and (max-width: 576px) {
     .container {
-        min-width: 576px;
-    }
-
-    header {
+        width: 576px;
         min-width: 576px;
     }
 
@@ -366,13 +375,23 @@ footer li a img{
         display: block;
     }
 
-    .app {
-        min-width: 576px;
+    .btn {
+        width: 30%;
     }
+
+    .images-frame-pic {
+        width: 104px;
+        height: 80px;
+    }
+
 
     .home-page {
         min-width: 576px;
         background-position: center;
+    }
+
+    .home-page__frame {
+        width: 60%;
     }
 
 }
