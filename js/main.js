@@ -11,7 +11,9 @@ export const DOMSelectors = {
     buttonBack: document.querySelector('.btn-back'),
     buttonforward: document.querySelector('.btn-forward'),
     buttons: document.querySelectorAll('.btn'),
-    moveFrame: document.querySelector('.images-frame div')
+    moveFrame: document.querySelector('.images-frame div'),
+    mobMenu: document.querySelector('.header__nav-menu-top p'),
+    mobMenuDisplay: document.querySelector('.header__nav-menu-top ul')
 };
 
 const screenShots = [
@@ -190,6 +192,20 @@ function render() {
         }
     });
 }
+
+// Кнопка мобильного меню
+DOMSelectors.mobMenu.addEventListener('click', (e) => {
+    if (DOMSelectors.mobMenuDisplay.style.display != 'block') {
+        DOMSelectors.mobMenuDisplay.style.display = 'block';
+        DOMSelectors.mobMenuDisplay.querySelectorAll('li')
+        console.log('work');
+        console.dir(DOMSelectors.mobMenuDisplay.querySelector('li'));
+
+    } else {
+        DOMSelectors.mobMenuDisplay.style.display = 'none';
+        console.log('done')
+    }
+})
 
 // Рендер скриншотов
 screenShots.forEach((pic, index) => {
