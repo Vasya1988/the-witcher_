@@ -167,6 +167,68 @@ header {
 
 
 
+/* -------------- Season 1 -------------- */
+.season1-page {
+    width: 576px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+.season1-page div {
+    width: 576px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.season1-page__title {
+    margin-bottom: 30px;
+    display: block;
+    width: 576px;
+    color: white;
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+}
+
+.season1-page__logo-netflix img {
+    width: 300px;
+}
+
+.season1-link {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+.season1-link:hover {
+    border: 4px solid red;
+}
+
+.season1-link p {  
+    width: 0;
+    height: 0;
+    position: relative;
+    top: 14px;
+    left: 40px;
+    
+    border-top: 20px solid transparent;
+	border-left: 30px solid white;
+	border-bottom: 20px solid transparent;
+}
+.season1-link:hover p {
+    border-left: 30px solid red;
+}
+/* -------------- // Season 1 -------------- */
+
+
+
+
+
 
 /* -------------- News Frame -------------- */
 
