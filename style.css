@@ -320,7 +320,28 @@ header {
 }
 
 
+.screenshot-frame {
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    background-color: #000000cc;
+    z-index: 1;
+}
 
+.big-screenshot {
+    margin: 0 auto;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.arrow-back, .arrow-forward {
+    color: blanchedalmond;
+}
 
 /* -------------- Галерея -------------- */
 .gallery {

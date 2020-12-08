@@ -13,7 +13,8 @@ export const DOMSelectors = {
     buttons: document.querySelectorAll('.btn'),
     moveFrame: document.querySelector('.images-frame div'),
     mobMenu: document.querySelector('.header__nav-menu-top p'),
-    mobMenuDisplay: document.querySelector('.header__nav-menu-top ul')
+    mobMenuDisplay: document.querySelector('.header__nav-menu-top ul'),
+    screenshotImages: document.querySelectorAll('.images-frame-pic')
 };
 
 const screenShots = [
@@ -209,9 +210,33 @@ DOMSelectors.mobMenu.addEventListener('click', (e) => {
 
 // Рендер скриншотов
 screenShots.forEach((pic, index) => {
-    let markupScreenShot = `<img class="images-frame-pic" src="${pic.adress}"alt="">`
-    DOMSelectors.screenShot.insertAdjacentHTML('afterbegin', markupScreenShot)
+    let markupScreenShot = `<img class="images-frame-pic" src="${pic.adress}"alt="">`;
+    let markupBigScreenshot = `<div class="screenshot-frame">
+                        <a href="#" class="arrow-back" >Back</a>
+                        <img data-bigScreenshot class="big-screenshot" src="${pic.adress}" alt="">
+                        <a href="#" class="arrow-forward" >Forward</a>
+                    </div>`;
+
+
+    DOMSelectors.screenShot.insertAdjacentHTML('afterbegin', markupScreenShot);
+
+    DOMSelectors.screenShot.firstChild.addEventListener('click', (e) => {
+        console.log('work');
+        
+        document.body.insertAdjacentHTML('afterbegin', markupBigScreenshot);
+        document.body.firstChild.addEventListener('click', (del) => {
+            document.body.firstChild.remove();
+        })
+    })
+
 })
+
+// function bigScreenImg() {
+//     console.log(DOMSelectors.screenshotImages);
+    
+// }
+// bigScreenImg()
+
 
 // Листать скриншоты
 DOMSelectors.buttons.forEach((button) => {
