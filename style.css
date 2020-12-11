@@ -323,6 +323,7 @@ header {
 .screenshot-frame {
     display: flex;
     align-items: center;
+    padding: 0 4%;
     top: 0;
     left: 0;
     bottom: 0;

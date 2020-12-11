@@ -18,6 +18,7 @@ export const DOMSelectors = {
     mobMenu: document.querySelector('.header__nav-menu-top p'),
     mobMenuDisplay: document.querySelector('.header__nav-menu-top ul'),
     screenshotImages: document.querySelectorAll('.images-frame-pic')
+    
 };
 
 export const screenShots = [
