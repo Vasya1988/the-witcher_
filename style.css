@@ -4,6 +4,7 @@ body {
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     min-width: 980px;
     margin: auto;
@@ -443,10 +444,10 @@ footer li a img{
 
 /* Мобильная версия */
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 540px) {
     .container {
-        width: 576px;
-        min-width: 576px;
+        width: 100%;
+        min-width: 540px;
     }
 
     .logo img {
