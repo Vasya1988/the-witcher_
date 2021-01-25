@@ -444,10 +444,12 @@ footer li a img{
 
 /* Мобильная версия */
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 576px) {
+
+    
     .container {
         width: 100%;
-        min-width: 540px;
+        min-width: 576px;
     }
 
     .logo img {
@@ -522,4 +524,182 @@ footer li a img{
 
 .testColor {
     background: rgb(139, 106, 106);
+}
+
+
+
+
+/* Мобильная верстка меньше 576px */
+@media screen and (max-width: 540px) {
+    .container {
+        min-width: 100%;
+    }
+
+    .logo img {
+        height: 98px;
+    }
+
+    .header {
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+    .header__nav-menu-top p {
+        padding: 18px 50px;
+        font-size: 1em;
+        border-radius: 4px;
+    }
+
+
+    .header__nav-menu-top ul li {
+        width: 100%;
+    }
+
+    /* Home page */
+    .home-page, .trailer-page {
+        min-width: 100%;
+    }
+    .home-page p {
+        font-size: 1em;
+        padding: 0 12px;
+    }
+    .home-page__frame {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .home-page__frame div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: inherit;
+        border-radius: 0;
+        background-color: #0c0c0c;
+        box-shadow: 4px 6px 10px 3px rgb(12, 12, 12, 0.8);
+    }
+    .home-page__frame div h1 {
+        margin-left: 0;
+        text-transform: uppercase;
+        font-size: 1em;
+    }
+    /* // Home page */
+
+
+    /* Trailer */
+    .trailer-page {
+        height: 100%;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+    .trailer-page__title {
+        font-size: .7em;
+    }
+    .trailer-page_movie {
+        width: 100%;
+    }
+
+    .trailer-page_movie iframe {
+        border-radius: 4px;
+        height: 200px;
+    }
+    iframe {
+        width: 100%;
+    }
+    /* // Trailer */
+
+
+
+
+    /* 1-st season */
+    .season1-page, .season1-page div {
+        width: 100%;
+    }
+
+    .season1-page__logo-netflix img {
+        width: 100%;
+        padding: 0 25px;
+        box-sizing: border-box;
+    }
+    /* // 1-st season */
+
+
+
+    /* News page */
+    .news-page {
+        width: 100%;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+    
+    .news-page__title {
+        font-size: .6em;
+        text-align: center;
+    }
+
+    .news-page__info-picture {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .news-page__info-picture img {
+        float: inherit;
+        margin-right: 0;
+        margin-bottom: 12px;
+        border-radius: 6px;
+        width: 100%;
+    }
+
+    .news-page__info-text {
+        padding: 0 4px;
+        font-size: 1.1em;
+        box-sizing: border-box;
+        color: #c0c0c0;
+    }
+
+
+
+    /* // News page */
+
+
+
+    .gallery {
+        height: 60px;
+    }
+    .btn {
+        width: 16%;
+        display: flex;
+        align-items: center;
+    }
+    .btn img {
+        height: 70%;
+    }
+
+    .images-frame-pic {
+        width: 80px;
+        height: 54px;
+        border-radius: 2px;
+        object-fit: cover;
+    }
+
+
+    footer {
+        margin-bottom: 20px;
+    }
+
+    footer nav {
+        display: flex;
+        justify-content: space-around;
+        /* align-items: baseline; */
+    }
+
+    footer li a img {
+        width: 70px;
+        /* height: 50px; */
+    }
+
+    footer nav li {
+        list-style: none;
+    }
 }
