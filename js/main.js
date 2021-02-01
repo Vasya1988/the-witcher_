@@ -152,77 +152,77 @@ export const screenShots = [
 export const wallpapersCard = [
     {
         number: 1,
-        adress: './image/wallpappers/1.jpg'
+        adress: './image/wallpapers/1.jpg'
     },
     
     {
         number: 2,
-        adress: './image/wallpappers/2.jpg'
+        adress: './image/wallpapers/2.jpg'
     },
 
     {
         number: 3,
-        adress: './image/wallpappers/3.jpg'
+        adress: './image/wallpapers/3.jpg'
     },
     
     {
         number: 4,
-        adress: './image/wallpappers/4.jpg'
+        adress: './image/wallpapers/4.jpg'
     },
     
     {
         number: 5,
-        adress: './image/wallpappers/5.jpg'
+        adress: './image/wallpapers/5.jpg'
     },
     
     {
         number: 6,
-        adress: './image/wallpappers/6.jpg'
+        adress: './image/wallpapers/6.jpg'
     },
     
     {
         number: 7,
-        adress: './image/wallpappers/7.jpg'
+        adress: './image/wallpapers/7.jpg'
     },
     
     {
         number: 8,
-        adress: './image/wallpappers/8.jpg'
+        adress: './image/wallpapers/8.jpg'
     },
     
     {
         number: 9,
-        adress: './image/wallpappers/9.jpg'
+        adress: './image/wallpapers/9.jpg'
     },
     
     {
         number: 10,
-        adress: './image/wallpappers/10.jpg'
+        adress: './image/wallpapers/10.jpg'
     },
     
     {
         number: 11,
-        adress: './image/wallpappers/11.jpg'
+        adress: './image/wallpapers/11.jpg'
     },
     
     {
         number: 12,
-        adress: './image/wallpappers/12.jpg'
+        adress: './image/wallpapers/12.jpg'
     },
     
     {
         number: 13,
-        adress: './image/wallpappers/13.jpg'
+        adress: './image/wallpapers/13.jpg'
     },
     
     {
         number: 14,
-        adress: './image/wallpappers/14.jpg'
+        adress: './image/wallpapers/14.jpg'
     },
     
     {
         number: 15,
-        adress: './image/wallpappers/15.jpg'
+        adress: './image/wallpapers/15.jpg'
     },
     
 ]
