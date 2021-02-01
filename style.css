@@ -274,8 +274,28 @@ header {
 /* -------------- // News Frame -------------- */
 
 
+/* --------------  Wallpappers Frame -------------- */
+.wallpapers-page {
+    max-width: 100%;
+    min-width: 980px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: opacity 1s;
+    padding: 0 40px;
+}
 
-
+.wallpapers-page img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 6px;
+    object-fit: cover;
+    padding: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+/* --------------  // Wallpappers Frame -------------- */
 
 
 /* -------------- About-page -------------- */
@@ -295,30 +315,25 @@ header {
     font-size: 1.4em;
 }
 
+.social_icon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .social_icon a {
     color: #631616;
     font-size: 3em;
     padding: 0 20px;
+    text-decoration: none;
 }
 
 
 /* -------------- // About-page -------------- */
 
-.wallpapers {
-    max-width: 100%;
-    min-width: 980px;
-    height: 540px;
-}
 
-.wallpapers-frame {
-    max-width: 100%;
-    min-width: 980px;
-    height: 540px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
+
+
 
 
 .screenshot-frame {
@@ -407,10 +422,6 @@ header {
 
 
 /* -------------- // Галерея -------------- */
-
-
-
-
 
 
 footer {
@@ -516,6 +527,14 @@ footer li a img{
         color: #fff;
         font-family: 'PT Sans', sans-serif;
         letter-spacing: .2em;
+    }
+
+    .wallpapers-page {
+        width: 100%;
+        min-width: 320px;
+        padding: 10px;
+        box-sizing: border-box;
+        justify-content: center;
     }
 }
 
@@ -661,7 +680,6 @@ footer li a img{
 
 
     /* // News page */
-
 
 
     .gallery {

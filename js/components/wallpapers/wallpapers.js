@@ -1,14 +1,10 @@
-import {DOMSelectors} from '../../main.js';
+import {DOMSelectors, wallpapersCard} from '../../main.js';
 
 export default function() {
-    const markupWallpapers = `<div class="wallpapers">
-    <div class="wallpapers-frame">
-        <!-- <div class="images-frame-pic">
-            <img src="" alt="">
-        </div> -->
-  
-    </div>
-</div>`;
+    
+const markupWallpapers = `<div class="wallpapers-page">
+
+    </div>`;
 
     function renderPage() {
         return new Promise((resolve, reject) => {
@@ -16,6 +12,10 @@ export default function() {
             DOMSelectors.navLink[4].classList.add('nav_link_active');
 
             document.getElementById('app').insertAdjacentHTML('afterbegin', markupWallpapers);
+            
+            wallpapersCard.forEach((item) => {
+                document.querySelector('.wallpapers-page').insertAdjacentHTML('afterbegin', `<img src="${item.adress}" alt=""></img>`)
+            });
             resolve();
         })
     };
@@ -23,12 +23,14 @@ export default function() {
     function animPage() {
         return new Promise((resolve, reject) => {
             document.querySelector('.wallpapers-page').style.opacity = 1;
-        })
+            resolve();
+        });
+        
     };
 
     async function runStart() {
         await renderPage();
-        await animPage();
+        await setTimeout(animPage, 50);
     };
 
     runStart();
