@@ -270,6 +270,14 @@ DOMSelectors.mobMenu.addEventListener('click', (e) => {
         DOMSelectors.mobMenuDisplay.style.display = 'none';
         console.log('done')
     }
+});
+
+
+ DOMSelectors.mobMenuDisplay.querySelectorAll('li').forEach((e) => {
+e.preventDefault();
+
+DOMSelectors.mobMenuDisplay.style.display = 'none';
+
 })
 
 
