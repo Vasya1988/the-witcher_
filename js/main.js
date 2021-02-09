@@ -273,11 +273,15 @@ DOMSelectors.mobMenu.addEventListener('click', (e) => {
 });
 
 
- DOMSelectors.mobMenuDisplay.querySelectorAll('li').addEventListener('click', (e) => {
-e.preventDefault();
+DOMSelectors.mobMenuDisplay.querySelectorAll('li').forEach((e) => {
+    e.addEventListener('click', () => {
+        if(e) {
+            DOMSelectors.mobMenuDisplay.style.display = 'none'
+        }
+    })
+})
 
-DOMSelectors.mobMenuDisplay.style.display = 'none';
-});
+
 
 
 // Рендер страницы приложения

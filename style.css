@@ -28,7 +28,6 @@ header {
 .header__nav-menu-top ul {
     display: flex;
     justify-content: space-between;
-
     /* background-color: rgb(25, 41, 85); */
 }
 
@@ -429,10 +428,10 @@ footer {
 }
 
 footer nav {
-
     display: flex;
     justify-content: space-around;
     align-items: baseline;
+    list-style: none;
 }
 
 footer li a img{
