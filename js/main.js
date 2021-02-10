@@ -272,7 +272,7 @@ DOMSelectors.mobMenu.addEventListener('click', (e) => {
     }
 });
 
-
+// Закрытие мобильного меню после клика по вкладке
 DOMSelectors.mobMenuDisplay.querySelectorAll('li').forEach((e) => {
     e.addEventListener('click', () => {
         if(e) {
