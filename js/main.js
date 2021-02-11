@@ -276,7 +276,11 @@ DOMSelectors.mobMenu.addEventListener('click', (e) => {
 DOMSelectors.mobMenuDisplay.querySelectorAll('li').forEach((e) => {
     e.addEventListener('click', () => {
         if(e) {
-            DOMSelectors.mobMenuDisplay.style.display = 'none'
+
+            if (screen.width < 576) {
+                DOMSelectors.mobMenuDisplay.style.display = 'none'
+            }
+            
         }
     })
 })
