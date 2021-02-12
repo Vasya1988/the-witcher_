@@ -682,6 +682,20 @@ footer li a img{
     /* // News page */
 
 
+
+    
+
+    /* Wallpapers */
+    .wallpapers-page img {
+        margin-bottom: 14px;
+    }
+
+
+    /* // Wallpapers */
+
+
+
+
     .gallery {
         height: 60px;
     }
